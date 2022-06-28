@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { AuthConsumer } from '../../providers/AuthProvider';
 
 const Register = ({ handleRegister }) => {
-  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' })
+  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '', first: '', last: '', image: '' })
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (user.password === user.passwordConfirmation) {
       handleRegister(user)
-      setUser({ email: '', password: '', passwordConfirmation: ''  })
+      setUser({ email: '', password: '', passwordConfirmation: '', first: '', last: '', image: '' })
     } else {
       alert('Password does not match!')
     }
@@ -24,6 +24,27 @@ const Register = ({ handleRegister }) => {
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
           type='email'
+          required
+        />
+        <label>First Name</label>
+        <input 
+          name='first'
+          value={user.first}
+          onChange={(e) => setUser({ ...user, first: e.target.value })}
+          required
+        />
+        <label>Last Name</label>
+        <input 
+          name='last'
+          value={user.last}
+          onChange={(e) => setUser({ ...user, last: e.target.value })}
+          required
+        />
+        <label>Profile Image</label>
+        <input 
+          name='image'
+          value={user.image}
+          onChange={(e) => setUser({ ...user, image: e.target.value })}
           required
         />
         <label>Password</label>
