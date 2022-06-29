@@ -43,6 +43,11 @@ const Cat = ({ id, name, avatar, breed, registry, deleteCat }) => {
                 >
                   Delete
                 </Button>
+                <Link 
+                  to={`/${id}/notes`}
+                >
+                  <Button>Notes</Button>
+                </Link>
               </Col>
               <Col>
                 <Image src={avatar} />

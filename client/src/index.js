@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import CatProvider from './providers/CatProvider';
+import NoteProvider from './providers/NoteProvider';
 
 initMiddleware()
 
@@ -17,7 +18,9 @@ root.render(
     <BrowserRouter>
       <AuthProvider>
         <CatProvider>
-          <App />
+          <NoteProvider>
+            <App />
+          </NoteProvider>
         </CatProvider>
       </AuthProvider>
     </BrowserRouter>
