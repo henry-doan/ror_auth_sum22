@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, ListGroup, Modal } from "react-bootstrap";
 import Moment from 'react-moment';
 import NoteForm from './NoteForm';
+import moment from 'moment';
 
 const Note = ({ catId, id, subject, body, ndate, ntime, deleteNote }) => {
   const [show, setShow] = useState(false);
@@ -23,13 +24,13 @@ const Note = ({ catId, id, subject, body, ndate, ntime, deleteNote }) => {
           <p>
             Date: 
             <Moment format="MM-DD-YYYY">
-              {ndate}
+              {moment.utc(ndate)}
             </Moment>
           </p>
           <p>
             Time: 
             <Moment format="hh:mm">
-              {ntime}
+              {moment.utc(ntime)}
             </Moment>
           </p>
           <p>Subject: {subject}</p>
