@@ -8,11 +8,12 @@ const CatForm = ({ addCat, errors, setErrors, updateCat }) => {
   const [cat, setCat] = useState({ name: '', breed: '', registry: '', avatar: '' })
   
   const { id } = useParams()
+  
   const location = useLocation()
-  const { name, breed, registry, avatar } = location.state
 
   useEffect( () => {
     if (id) {
+      const { name, breed, registry, avatar } = location.state
       setCat({ name, breed, registry, avatar })
     }
   }, [])

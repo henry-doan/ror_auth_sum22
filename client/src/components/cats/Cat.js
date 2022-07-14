@@ -39,7 +39,7 @@ const Cat = ({ id, name, avatar, breed, registry, deleteCat }) => {
                   <Button>Edit</Button>
                 </Link>
                 <Button
-                  onClick={() => deleteCat(78)}
+                  onClick={() => deleteCat(id)}
                 >
                   Delete
                 </Button>
